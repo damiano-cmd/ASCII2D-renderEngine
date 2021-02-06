@@ -19,6 +19,8 @@ class room {
 			char getAt(int x, int y);
 			void edit(int x, int y, char rep);
 			int* size();
+			int** findAll(char ch);
+			int* find(char ch);
 };
 
 class sprite {

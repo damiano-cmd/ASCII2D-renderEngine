@@ -32,6 +32,42 @@ int* room::size() {
     int* ret = new int[2]{_w, _h};
     return ret;
 };
+int** room::findAll(char ch) {
+	int** indexs = new int*[3];
+	vector<int> x;
+	vector<int> y;
+	for (int i = 0; i < _h; i++) {
+		for (int e = 0; e < _w; e++) {
+			if (_rm[i][e] == ch) {
+				x.push_back(e);
+				y.push_back(i);
+			}
+		}
+	}
+	int xs = x.size();
+	int ys = y.size();
+	indexs[0] = new int[1]{xs};
+	indexs[1] = new int[xs];
+	indexs[2] = new int[ys];
+	for (int i = 0; i < x.size(); i++) {
+		indexs[1][i] = x[i];
+		indexs[2][i] = y[i];
+	}
+	return indexs;
+};
+int* room::find(char ch) {
+	int* ret = new int[2]{0, 0};
+	for (int i = 0; i < _h; i++) {
+		for (int e = 0; e < _w; e++) {
+			if (_rm[i][e] == ch) {
+				ret[0] = e;
+				ret[1] = i;
+				return ret;
+			}
+		}
+	}
+	return ret;
+};
 
 sprite::sprite() {};
 sprite::sprite(char** sprite, int w, int h) {
