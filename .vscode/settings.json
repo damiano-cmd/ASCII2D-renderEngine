@@ -1,0 +1,8 @@
+{
+    "workbench.settings.editor": "json",
+    "files.associations": {
+        "new": "cpp",
+        "ostream": "cpp"
+    },
+    "code-runner.ignoreSelection": true
+}
